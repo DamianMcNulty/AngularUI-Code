@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+- 4.4.2
+before_script:
+- bower install
+- npm install
+- http-server -a localhost -p 8000
+- webdriver-manager update
+- webdriver-manager start
+- grunt dist
+script:
+- echo 'Hello'
+after_success:
+- echo 'Goodbye'
